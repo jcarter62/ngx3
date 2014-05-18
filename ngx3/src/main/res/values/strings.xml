@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Number Game X3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="prgDesc">You will be presented with sets of 3 numbers.\n\n
+        Pick largest, smallest and middle numbers,
+        and you will achieve star level.\n\n
+        You receive 1 point for a correct, and -2 points
+        for incorrect answers.\n\nSee how quickly you can
+        achieve star level by receive 20 points.</string>
+    <string name="txtTimerLabel">Timer</string>
+    <string name="txtGameNum">Number of Games</string>
+    <string name="txtHighScore">High Score</string>
+    <string name="title_activity_game">Number Game</string>
+    <string name="txtButton1">11111</string>
+    <string name="txtButton2">22222</string>
+    <string name="txtButton3">33333</string>
+    <string name="btnStart">Start</string>
+    <string name="QuestionText">Pick the Largest Number</string>
+    <string name="CorrectText">Correct 0</string>
+    <string name="IncorrectText">Incorrect 0</string>
+    <string name="title_activity_enter3">Enter3</string>
+    <string name="instructions_enter3">Enter 3 numbers, and the system will tell you which one is largest.</string>
+
+</resources>

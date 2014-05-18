@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:stretchColumns="*"
+    android:id="@+id/tbl"
+    android:shrinkColumns="*">
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_height="@dimen/button_height"
+            android:text="Choose an Activity"
+            android:textSize="@dimen/Feedback_Text_Size"
+            android:gravity="center"
+            />
+        </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/row1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter 3 Numbers Game"
+            android:id="@+id/button"
+            android:onClick="btnEnter3Click" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/row2"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Largest Game"
+            android:id="@+id/btnStart"
+            android:onClick="btnLargestClick" />
+    </TableRow>
+
+</TableLayout>

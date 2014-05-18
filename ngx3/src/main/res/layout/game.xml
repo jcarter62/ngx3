@@ -1,0 +1,165 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.jcarter62.numbergamex3.ngx3.gameActivity"
+    android:shrinkColumns="*"
+    android:stretchColumns="*">
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/grow1"
+        >
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/titleString" />
+    </TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/growQuestion"
+        >
+        <TextView
+            android:id="@+id/txtQuestion"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/QuestionText"
+            android:textSize="@dimen/abc_action_bar_title_text_size"
+            android:gravity="center_horizontal"
+            android:textAlignment="center" />
+        <View
+            android:layout_height="@dimen/button_height"
+            android:layout_width="fill_parent"
+            android:background="@android:color/transparent" >
+        </View>
+    </TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/growLine1">
+        <View
+            android:layout_height="2dp"
+            android:layout_width="fill_parent"
+            android:background="@android:color/black"
+>
+            </View>
+    </TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/grow2"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:id="@+id/btn1"
+            android:text="@string/txtButton1"
+            android:onClick="btn1Click"
+            android:textSize="@dimen/abc_action_bar_title_text_size"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_blue_dark"
+            />
+            />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/grow3"
+        >
+        <Button
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:id="@+id/btn2"
+            android:text="@string/txtButton2"
+            android:onClick="bnt2Click"
+            android:textSize="@dimen/abc_action_bar_title_text_size"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_red_dark"
+
+            />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/grow4"
+        >
+        <Button
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:id="@+id/btn3"
+            android:text="@string/txtButton3"
+            android:onClick="btn3Click"
+            android:textSize="@dimen/abc_action_bar_title_text_size"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_green_dark"
+
+            />
+    </TableRow>
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/growLine2"
+        >
+        <TextView
+            android:layout_height="@dimen/button_height"
+            android:layout_width="fill_parent"
+            android:background="@android:color/transparent"
+        />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/growLineFeedback"
+        >
+        <TextView
+            android:layout_height="@dimen/button_height"
+            android:layout_width="fill_parent"
+            android:id="@+id/userFeedback"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/holo_red_dark"
+            android:textAllCaps="true"
+            android:text="Great!"
+            android:textSize="@dimen/Feedback_Text_Size"
+ />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/growScore1"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/CorrectText"
+            android:id="@+id/textCorrect"
+            android:textSize="@dimen/abc_action_bar_title_text_size"
+            />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/growScore2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/IncorrectText"
+            android:id="@+id/textIncorrect"
+            android:textSize="@dimen/abc_action_bar_title_text_size"
+            />
+    </TableRow>
+
+</TableLayout>
