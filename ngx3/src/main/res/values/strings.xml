@@ -21,7 +21,10 @@
     <string name="QuestionText">Pick the Largest Number</string>
     <string name="CorrectText">Correct 0</string>
     <string name="IncorrectText">Incorrect 0</string>
+    <string name="ScoreText">Score 0</string>
     <string name="title_activity_enter3">Enter3</string>
     <string name="instructions_enter3">Enter 3 numbers, and the system will tell you which one is largest.</string>
+    <string name="title_activity_score_list">Most Recent Scores</string>
+    <string name="title_activity_test_grid">TestGrid</string>
 
 </resources>

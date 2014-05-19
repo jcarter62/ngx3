@@ -25,9 +25,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter 3 Numbers Game"
+            android:text="Pick Largest Game"
             android:id="@+id/button"
-            android:onClick="btnEnter3Click" />
+            android:onClick="btnLargestClick" />
     </TableRow>
 
     <TableRow
@@ -38,9 +38,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pick Largest Game"
+            android:text="Show Recent Scores"
             android:id="@+id/btnStart"
-            android:onClick="btnLargestClick" />
+            android:onClick="btnShowList" />
     </TableRow>
 
 </TableLayout>
