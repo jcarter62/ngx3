@@ -36,7 +36,7 @@ public class numbers {
 
     // returns true if b is in the middle.
     private boolean isInMiddle(int a, int b, int c) {
-        if ( ( ( a <= b ) && ( b <= c ) ) || ( ( a >= b) && ( b >= c )) )
+        if (((a <= b) && (b <= c)) || ((a >= b) && (b >= c)))
             return true;
         else
             return false;
@@ -46,20 +46,20 @@ public class numbers {
         int x;
         // first highest.
         x = n2;
-        if ( n1 > n2 ) x = n1;
-        if ( n3 > x ) x = n3;
+        if (n1 > n2) x = n1;
+        if (n3 > x) x = n3;
         highest = x;
 
         // lowest
         x = n1;
-        if ( n1 > n2 ) x = n2;
-        if ( n3 < x ) x = n3;
+        if (n1 > n2) x = n2;
+        if (n3 < x) x = n3;
         lowest = x;
 
         // middle
-        if ( isInMiddle(n1,n2,n3) )
+        if (isInMiddle(n1, n2, n3))
             middle = n2;
-        else if ( isInMiddle(n2,n1,n3))
+        else if (isInMiddle(n2, n1, n3))
             middle = n1;
         else
             middle = n3;

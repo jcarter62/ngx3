@@ -25,7 +25,7 @@ public class ScoreList extends ListActivity {
 
         String[] from = new String[]{"highscore"};
         int[] to = new int[]{R.id.scoreTextView};
-        cAdptr = new SimpleCursorAdapter( ScoreList.this,
+        cAdptr = new SimpleCursorAdapter(ScoreList.this,
                 R.layout.score_list_item, null, from, to);
         setListAdapter(cAdptr);
 

@@ -15,11 +15,11 @@ public class feedback {
     // http://www.k-3teacherresources.com/positive-words.html#.U0T-v-ZdVj4
     private final String[] goodwords = new String[]
             {
-                    "bravo","wow","super","terrific","cool","amazing","superb","brilliant",
-                    "fantastic","fabulous","champion","tops","congratulations","lovely",
-                    "spot on","well done","you rock","great job","tip top","good thinking",
-                    "you can do it","keep it up","great choice","way to go","right on",
-                    "top stuff","take a bow","unreal","impressed","great stuff","awesome",
+                    "bravo", "wow", "super", "terrific", "cool", "amazing", "superb", "brilliant",
+                    "fantastic", "fabulous", "champion", "tops", "congratulations", "lovely",
+                    "spot on", "well done", "you rock", "great job", "tip top", "good thinking",
+                    "you can do it", "keep it up", "great choice", "way to go", "right on",
+                    "top stuff", "take a bow", "unreal", "impressed", "great stuff", "awesome",
                     "nice going"
             };
 
@@ -31,14 +31,14 @@ public class feedback {
         numberOfWords = goodwords.length;
     }
 
-    public String GetWord(){
+    public String GetWord() {
         String rtrn;
         try {
             rtrn = goodwords[r.nextInt(numberOfWords)];
             // try to not send the same word twice.
-            if ( rtrn == lastword )
+            if (rtrn == lastword)
                 rtrn = goodwords[r.nextInt(numberOfWords)];
-        } catch (Exception e ) {
+        } catch (Exception e) {
             rtrn = goodwords[0];
         }
         lastword = rtrn;

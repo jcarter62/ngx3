@@ -26,18 +26,18 @@ public class gameActivity extends ActionBarActivity {
     private DatabaseConnector db;
 
     private void tally(boolean ans) {
-        if (RemainingQuestions > 0 ) {
+        if (RemainingQuestions > 0) {
             int thisScore;
 
             qEnd = System.currentTimeMillis();
             qDiff = qEnd - qStart;
-            thisScore = (int)( 100.0 - ( qDiff / 100.0 ) );
-            if ( thisScore < 0 ) {
+            thisScore = (int) (100.0 - (qDiff / 100.0));
+            if (thisScore < 0) {
                 thisScore = 0;
             }
 
-            RemainingQuestions --;
-            if ( RemainingQuestions < 0 )
+            RemainingQuestions--;
+            if (RemainingQuestions < 0)
                 RemainingQuestions = 0;
 
             if (ans) {
@@ -46,8 +46,8 @@ public class gameActivity extends ActionBarActivity {
                 userMessage = userFeedBack.GetWord();
             } else {
                 incorrect++;
-                score -= ( thisScore / 2 );
-                if ( score < 0 )
+                score -= (thisScore / 2);
+                if (score < 0)
                     score = 0;
                 userMessage = "";
             }
@@ -56,7 +56,7 @@ public class gameActivity extends ActionBarActivity {
             loadButtons();
         }
 
-        if (RemainingQuestions <= 0 ) {
+        if (RemainingQuestions <= 0) {
             gameOver = true;
             endGame();
         }
@@ -84,7 +84,7 @@ public class gameActivity extends ActionBarActivity {
 
     private void loadButtons() {
         Button b;
-        if ( RemainingQuestions > 0 ) {
+        if (RemainingQuestions > 0) {
             b = (Button) findViewById(R.id.btn1);
             b.setText(int2str(n.getN1()));
             b = (Button) findViewById(R.id.btn2);
@@ -125,7 +125,7 @@ public class gameActivity extends ActionBarActivity {
         gameOver = false;
     }
 
-    private void showMessage( String msg ) {
+    private void showMessage(String msg) {
         Context context = getApplicationContext();
         CharSequence text = msg;
         int duration = Toast.LENGTH_SHORT;

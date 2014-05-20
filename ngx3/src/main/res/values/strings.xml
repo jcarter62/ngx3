@@ -26,5 +26,15 @@
     <string name="instructions_enter3">Enter 3 numbers, and the system will tell you which one is largest.</string>
     <string name="title_activity_score_list">Most Recent Scores</string>
     <string name="title_activity_test_grid">TestGrid</string>
+    <string name="title_activity_game_info">GameInfo</string>
+    <string name="info1">This is a game based on a classic "pick the largest" of three numbers.\n\n
+        You will be presented with 3 numbers, and you will be required to pick the largest.\n\n
+        Scoring is a function of time and if you select the correct answer.
+    </string>
+    <string name="info2">There are 5 sets of numbers for each game.  A perfect score for a game is 500 points.\n\nFor each set, you can obtain 100 points.
+        The longer you delay answering, the fewer points you will receive.\n\nFor example, if you answer correct after
+        1 second, you will receive 90 points instead of 100.  \n\nIf you answer incorrect, after
+        1 second, your score will be reduced by 1/2 the correct score, or -45.
+    </string>
 
 </resources>

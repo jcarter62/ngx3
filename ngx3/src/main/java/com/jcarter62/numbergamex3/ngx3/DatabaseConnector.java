@@ -3,6 +3,7 @@ package com.jcarter62.numbergamex3.ngx3;
 /**
  * Created by jim on 5/18/14.
  */
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -10,6 +11,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
 import java.util.UUID;
 
 /**
@@ -30,25 +32,25 @@ public class DatabaseConnector {
     private int determineHighScore() {
         int hiscore = 0;
 
-        Cursor c = database.query("scores",new String[]{"_id","score"},null, null, null, null, null);
+        Cursor c = database.query("scores", new String[]{"_id", "score"}, null, null, null, null, null);
 
         Log.d(TAG, "Cursor open, records = " + int2str(c.getCount()));
 
-        if ( c.getCount() > 0) {
+        if (c.getCount() > 0) {
             int ci;
             ci = c.getColumnIndex("score");
 
             c.moveToFirst();
-            while ( ! c.isAfterLast()) {
-                Log.d(TAG, "Check to see if " + int2str(c.getInt(ci)) + " > " + int2str(hiscore) );
-                if ( c.getInt(ci) > hiscore )
+            while (!c.isAfterLast()) {
+                Log.d(TAG, "Check to see if " + int2str(c.getInt(ci)) + " > " + int2str(hiscore));
+                if (c.getInt(ci) > hiscore)
                     hiscore = c.getInt(ci);
                 c.moveToNext();
             }
         }
         c = null;
 
-        Log.d(TAG, "high score = " + int2str(hiscore) );
+        Log.d(TAG, "high score = " + int2str(hiscore));
 
         return hiscore;
     }
@@ -64,7 +66,7 @@ public class DatabaseConnector {
     private void setHighScoreField(int highs) {
         String execstr;
         execstr = "update scores set highscore = '" + int2str(highs) + " <<-- High Score ! ' " +
-                  " where score = " + int2str(highs) + ";";
+                " where score = " + int2str(highs) + ";";
         Log.d(TAG, execstr);
         database.execSQL(execstr);
     }
@@ -76,7 +78,7 @@ public class DatabaseConnector {
         setAllToBlank();
         Log.d(TAG, "determineHighScore");
         highscore = determineHighScore();
-        Log.d(TAG, "high score = " + int2str(highscore) );
+        Log.d(TAG, "high score = " + int2str(highscore));
         Log.d(TAG, "setHighScoreField");
         setHighScoreField(highscore);
     }
@@ -88,36 +90,36 @@ public class DatabaseConnector {
     }
 
     public void addScore(int score) {
-        Log.d(TAG, "Insert Score of " + score );
+        Log.d(TAG, "Insert Score of " + score);
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
         ContentValues nc = new ContentValues();
         nc.put("score", score);
-        nc.put("guid", randomUUIDString );
+        nc.put("guid", randomUUIDString);
         open();
         database.insert("scores", null, nc);
         close();
     }
 
     public void deleteRecord(String id) {
-        Log.d(TAG, "deleteRecord: id=" + id );
+        Log.d(TAG, "deleteRecord: id=" + id);
         open();
         database.delete("scores", "guid=" + id, null);
         close();
     }
 
     private void dumpData() {
-        Cursor c = database.query("scores",new String[]{"_id","guid","score","highscore"},null, null, null, null, null);
+        Cursor c = database.query("scores", new String[]{"_id", "guid", "score", "highscore"}, null, null, null, null, null);
 
         Log.d(TAG, "dumpdata: Start");
-        if ( c.getCount() > 0) {
+        if (c.getCount() > 0) {
             c.moveToFirst();
-            while ( ! c.isAfterLast()) {
+            while (!c.isAfterLast()) {
                 String s;
-                s = "dumpdata: " ;
-                s = s + "guid = " + c.getString(c.getColumnIndex("guid")) ;
-                s = s + ", score = " + c.getInt(c.getColumnIndex("score")) ;
-                s = s + ", highscore = " + c.getString(c.getColumnIndex("highscore")) ;
+                s = "dumpdata: ";
+                s = s + "guid = " + c.getString(c.getColumnIndex("guid"));
+                s = s + ", score = " + c.getInt(c.getColumnIndex("score"));
+                s = s + ", highscore = " + c.getString(c.getColumnIndex("highscore"));
                 Log.d(TAG, s);
                 c.moveToNext();
             }
@@ -131,11 +133,11 @@ public class DatabaseConnector {
         setHighScore();
         Log.d(TAG, "getRecent() - return dataset");
         dumpData();
-        return database.query("scores",new String[]{"_id","highscore"},null, null, null, null, null);
+        return database.query("scores", new String[]{"_id", "highscore"}, null, null, null, null, null);
     }
 
     public Cursor getRecord(String id) {
-        Log.d(TAG, "get record, id=" + id );
+        Log.d(TAG, "get record, id=" + id);
         return database.query("scores", null, "guid=" + id, null, null, null, null);
     }
 
@@ -144,7 +146,7 @@ public class DatabaseConnector {
         Log.d(TAG, "Open " + database.getPath());
     }
 
-    public void updateRecord(String id, int score ) {
+    public void updateRecord(String id, int score) {
         Log.d(TAG, "Update Record");
         ContentValues c = new ContentValues();
         c.put("score", score);
@@ -167,12 +169,12 @@ public class DatabaseConnector {
         public void onCreate(SQLiteDatabase db) {
             String createQuery =
                     "CREATE TABLE scores" +
-                    "( _id integer primary key autoincrement, " +
-                    "  guid TEXT," +
-                    "  score INTEGER, " +
-                    "  timestamp TEXT, " +
-                    "  highscore TEXT  " +
-                    ");";
+                            "( _id integer primary key autoincrement, " +
+                            "  guid TEXT," +
+                            "  score INTEGER, " +
+                            "  timestamp TEXT, " +
+                            "  highscore TEXT  " +
+                            ");";
 
             Log.d(TAG, "Create DB");
             db.execSQL(createQuery);
